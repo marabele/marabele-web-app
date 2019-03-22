@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- stable
+cache:
+  directories:
+  - node_modules
+script:
+- npm test
+- npm run build
+notifications:
+  slack:
+    on_pull_requests: true
+    template:
+    - "%{repository_slug} (%{commit}) : %{message} %{foo} "
+    - 'Build details: %{build_url}'
+    rooms:
+      secure: wgYQLPiGr42xsalxhkWdHOmlj0CJ4XQs+AqET01uGPunMTEhQ7ttYxh3dM4hePK70FMVJy3/UgLqYwAPW/ET6BVlgI+EJaXZDcVI+j16BrkXkouAdLYim6XVtGMqHlMZUs4FrEStU1oPUvt3kGHxJRKi1XqM++vz1OfwwQTfruumSK8F+k0jpI+mNpFd8MhC2Qf9Ktw6S8u9DoKfHHf4McjSmBFiJkz26xl6by7ggDj1NVQlRZLAiKSThJTmo7v0OEoN15xfwqGqKAUqbAV9eswDNG1p3zI1D1yKbVskndOE/J3yep58CCKrbsCZ78Q4rypOIYYhEpE+7ByxY17hvOGU6IEA/kPaFhkL/39sLqxRJqoXTwNUct4FVXjbgcST3F5jRt957qzs+v85mYE/yqgGHEI30jRQ4kxVK1brOYddphKlH6NJCQ9I1qae8I7P/7qgQvJGD4i/qbAIaQKsNTtLd/ATIqUqYlB8F6S/Os/xTZbcKKZczh1+hCziq/kLE1ue3khfeyBtyitrQbJ7cLm2vpxF+UK0CaEpji7krSFGm6Oq495HSUEoJuGX2mLuq8MFet2bTjrMVD84vkS0d5fOSoKx2/os/cFhnBoM9+WeF6EYnvnJqb9eWH0OiyEYRKDdyQoVc6aSpr+/eFAgB2yZse25qL+r/J5NM5cfRI0=
+    on_success: always
+    on_failure: always

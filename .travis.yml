@@ -15,7 +15,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: chmod +x deploy.sh && deploy.sh
+  script: sh $TRAVIS_BUILD_DIR deploy.sh
   on:
     all_branches: true
 notifications:

@@ -5,14 +5,13 @@ cache:
   directories:
   - node_modules
 before_install:
-  - openssl aes-256-cbc -K $encrypted_17d011923308_key -iv $encrypted_17d011923308_iv
-  -in travis_rsa.enc -out travis_rsa -d
-  - chmod 600 ~/.ssh/travis_rsa
+- openssl aes-256-cbc -K $encrypted_17d011923308_key -iv $encrypted_17d011923308_iv -in travis_rsa.enc -out ~/.ssh/travis_rsa -d
+- chmod 600 ~/.ssh/travis_rsa
 install:
-  - npm install -g gatsby-cli
+- npm install -g gatsby-cli
 script:
-  - npm test
-  - gatsby build
+- npm test
+- gatsby build
 deploy:
   skip_cleanup: true
   provider: script

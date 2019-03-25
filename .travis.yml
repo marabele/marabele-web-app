@@ -22,8 +22,8 @@ before_install:
   -in travis_rsa.enc -out travis_rsa -d
   - chmod 600 ~/.ssh/travis_rsa
 install:
-  -npm install -g gatsby-cli
-  -npm install
+  - npm install -g gatsby-cli
+  - npm install
 script:
   - gatsby build
 deploy:

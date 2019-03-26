@@ -19,7 +19,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/public root@apexaesthetica.online:~/var/www/html/demo
+  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/public ~/var/www/html/demo
   on:
     all_branches: true
 notifications:
